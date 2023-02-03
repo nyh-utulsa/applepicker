@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HighScore : MonoBehaviour
 {
-    static private Text _UI_TEXT;
+    static private TextMeshProUGUI _UI_TEXT;
     static private int _SCORE = 1000;
     private Text txtCom;
 
     void Awake () {
-        _UI_TEXT = GetComponent<Text>();
+        _UI_TEXT = GetComponent<TextMeshProUGUI>();
         if (PlayerPrefs.HasKey("HighScore")) { // a
             SCORE = PlayerPrefs.GetInt("HighScore");
         }
